@@ -1,0 +1,23 @@
+﻿@model IEnumerable<EntityFramework.Models.Destination>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Touristic Destinations</h2>
+
+@foreach (var item in Model)
+{
+    <div class="container">
+        <div class="row aling-items-start">
+            <div id="elementCard" class="card">
+                <h5 id="" class="card-title">@Html.DisplayFor(modelItem => item.Name)</h5>
+                <img src="@Html.DisplayFor(modelItem => item.Photo)" class="card-img-top">
+                <div class="card-body">
+                    <p class="card-text">@Html.DisplayFor(modelItem => item.Description)</p>
+                    <a class="btn btn-primary">From $ @Html.DisplayFor(modelItem => item.Price) per person</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
